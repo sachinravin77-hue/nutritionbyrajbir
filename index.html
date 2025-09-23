@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nutrition By Rajbir</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #f5f1e7;
+      --card: #ffffff;
+      --accent: #8b5e3c;
+      --text: #2f2725;
+      --muted: #7a6c5e;
+      --radius: 14px;
+      --shadow: 0 6px 20px rgba(0,0,0,0.06);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+    }
+    header {
+      background: var(--card);
+      box-shadow: var(--shadow);
+      padding: 16px 24px;
+      position: sticky;
+      top: 0; z-index: 1000;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    header .brand { font-weight: 800; font-size: 18px; }
+    nav a {
+      margin-left: 16px;
+      text-decoration: none;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    nav a:hover { color: var(--accent); }
+
+    .container { max-width: 1100px; margin: auto; padding: 24px; }
+
+    /* HERO */
+    .hero {
+      display: flex; flex-wrap: wrap; align-items: center; gap: 20px;
+      margin-top: 20px;
+    }
+    .hero-text { flex: 1; min-width: 280px; }
+    .hero-text h1 {
+      font-size: 32px; font-weight: 800; margin-bottom: 12px;
+    }
+    .hero-text p { color: var(--muted); margin-bottom: 16px; }
+    .btn {
+      display: inline-block;
+      padding: 12px 20px;
+      border-radius: 10px;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    .btn-primary { background: var(--accent); color: #fff; }
+    .btn-outline { border: 1px solid var(--muted); color: var(--text); }
+    .btn:hover { opacity: 0.9; }
+    .hero img {
+      flex: 1; max-width: 420px; border-radius: 16px;
+      box-shadow: var(--shadow);
+    }
+
+    /* SECTION TITLES */
+    h2 { text-align: center; margin: 50px 0 20px; font-size: 24px; font-weight: 800; }
+
+    /* ABOUT */
+    .about { display: grid; grid-template-columns: 1fr 2fr; gap: 20px; align-items: center; }
+    .about img { width: 100%; border-radius: var(--radius); box-shadow: var(--shadow); }
+    .about p { color: var(--muted); margin-top: 10px; }
+
+    /* PROGRAMS */
+    .programs { display: grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap: 16px; margin-top: 20px; }
+    .card {
+      background: var(--card);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 20px;
+      display: flex; flex-direction: column; justify-content: space-between;
+    }
+    .card h3 { margin-bottom: 8px; }
+    .card p { color: var(--muted); font-size: 14px; }
+    .price { margin-top: 10px; font-weight: 700; }
+    .card button { margin-top: 14px; }
+
+    /* TESTIMONIALS */
+    .testimonials { display: grid; grid-template-columns: repeat(auto-fit,minmax(260px,1fr)); gap: 16px; margin-top: 20px; }
+    .testimonial { text-align: center; padding: 20px; }
+    .testimonial img {
+      width: 80px; height: 80px; border-radius: 50%; object-fit: cover;
+      margin-bottom: 12px;
+    }
+    .testimonial p { font-style: italic; color: var(--muted); margin-bottom: 8px; }
+
+    /* CONTACT */
+    .contact { max-width: 500px; margin: 40px auto; }
+    .contact input, .contact select {
+      width: 100%; padding: 12px; margin-top: 10px;
+      border-radius: 10px; border: 1px solid #ddd;
+    }
+    .contact button { width: 100%; margin-top: 14px; }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* RESPONSIVE */
+    @media(max-width: 768px) {
+      .about { grid-template-columns: 1fr; }
+      .hero { flex-direction: column; text-align: center; }
+      .hero img { max-width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="brand">NutritionByRajbir</div>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#programs">Programs</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <div class="container">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-text">
+        <h1>Your Body. Your Lifestyle. Your Best Self.</h1>
+        <p>Premium coaching that blends science and lifestyle. Lose fat, build lean muscle, and gain confidence with tailored programs.</p>
+        <a href="#programs" class="btn btn-primary">View Programs</a>
+        <a href="#contact" class="btn btn-outline">Free 15-min Consult</a>
+      </div>
+      <img src="rajbir.jpg" alt="Coach Rajbir" onerror="this.src='https://via.placeholder.com/420x300?text=Coach+Image'">
+    </section>
+
+    <!-- ABOUT -->
+    <h2 id="about">About Rajbir</h2>
+    <section class="about">
+      <img src="rajbir.jpg" alt="Rajbir">
+      <div>
+        <p>With nearly a decade of experience, I help ambitious individuals achieve lasting transformations. My coaching goes beyond reps and meals — it’s about confidence, energy, and a lifestyle that works for you.</p>
+        <ul>
+          <li>Expert guidance in fat loss & muscle building</li>
+          <li>Custom programs for body transformation</li>
+          <li>Weekly accountability & adjustments</li>
+          <li>Premium coaching tailored for busy professionals</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- PROGRAMS -->
+    <h2 id="programs">Programs & Pricing</h2>
+    <section class="programs">
+      <div class="card">
+        <div>
+          <h3>Kickstart Program</h3>
+          <p>Jumpstart your journey and feel the first wave of change.</p>
+          <div class="price">₹7,000 · 1 Month</div>
+        </div>
+        <button class="btn btn-primary" onclick="programInterest('Kickstart Program')">Apply via WhatsApp</button>
+      </div>
+      <div class="card">
+        <div>
+          <h3>Momentum Program</h3>
+          <p>Build unstoppable habits and see real, lasting results.</p>
+          <div class="price">₹15,000 · 3 Months</div>
+        </div>
+        <button class="btn btn-primary" onclick="programInterest('Momentum Program')">Apply via WhatsApp</button>
+      </div>
+      <div class="card">
+        <div>
+          <h3>Breakthrough Program</h3>
+          <p>Experience a powerful transformation in body and lifestyle.</p>
+          <div class="price">₹25,000 · 6 Months</div>
+        </div>
+        <button class="btn btn-primary" onclick="programInterest('Breakthrough Program')">Apply via WhatsApp</button>
+      </div>
+      <div class="card">
+        <div>
+          <h3>Elite Lifestyle Program</h3>
+          <p>A year-long partnership to achieve and sustain your dream physique.</p>
+          <div class="price">₹40,000 · 12 Months</div>
+        </div>
+        <button class="btn btn-primary" onclick="programInterest('Elite Lifestyle Program')">Apply via WhatsApp</button>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <h2 id="testimonials">What Clients Say</h2>
+    <section class="testimonials">
+      <div class="card testimonial">
+        <img src="client1.jpg" alt="Rohit">
+        <p>“Rajbir helped me lose 10kg in 3 months. I feel lighter, stronger, and more confident.”</p>
+        <strong>Rohit Sharma</strong>
+      </div>
+      <div class="card testimonial">
+        <img src="client2.jpg" alt="Ananya">
+        <p>“The personalized nutrition plan changed my lifestyle. I built lean muscle and improved my energy.”</p>
+        <strong>Ananya Singh</strong>
+      </div>
+      <div class="card testimonial">
+        <img src="client3.jpg" alt="Arjun">
+        <p>“I never thought I could stay consistent. With Rajbir’s guidance, I transformed both body and mindset.”</p>
+        <strong>Arjun Mehta</strong>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <h2 id="contact">Apply for Coaching</h2>
+    <section class="contact card">
+      <input id="name" placeholder="Your Name">
+      <input id="phone" placeholder="Phone Number">
+      <select id="goal">
+        <option value="">Select your goal</option>
+        <option value="Weight Loss">Weight Loss</option>
+        <option value="Muscle Gain">Muscle Gain</option>
+        <option value="Lifestyle Transformation">Lifestyle Transformation</option>
+      </select>
+      <button class="btn btn-primary" onclick="submitLead()">Apply via WhatsApp</button>
+      <p id="formMsg" class="note"></p>
+    </section>
+
+  </div>
+
+  <footer>© <span id="year"></span> NutritionByRajbir · All rights reserved</footer>
+
+  <script>
+    const WHATSAPP_NUMBER = "+919817187457";
+    function whatsappLink(message) {
+      return "https://wa.me/" + WHATSAPP_NUMBER.replace(/[^0-9]/g, "") + "?text=" + encodeURIComponent(message);
+    }
+    function programInterest(program) {
+      const msg = `Hi Rajbir, I'm interested in the ${program}. Please share details.`;
+      window.open(whatsappLink(msg), "_blank");
+    }
+    function submitLead() {
+      const name = document.getElementById("name").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const goal = document.getElementById("goal").value;
+      const msgBox = document.getElementById("formMsg");
+
+      if (!name || !phone || !goal) {
+        msgBox.textContent = "Please fill in all fields.";
+        return;
+      }
+      const msg = `Hi Rajbir, I’d like to apply for coaching.\n\nName: ${name}\nPhone: ${phone}\nGoal: ${goal}`;
+      window.open(whatsappLink(msg), "_blank");
+      msgBox.textContent = "Opening WhatsApp... complete the message to send.";
+    }
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
