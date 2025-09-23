@@ -10,22 +10,23 @@
     
     <style>
         :root {
-            --primary: #2563eb;
-            --primary-dark: #1d4ed8;
-            --accent: #f59e0b;
-            --bg-primary: #ffffff;
-            --bg-secondary: #f8fafc;
-            --bg-dark: #0f172a;
-            --text-primary: #0f172a;
-            --text-secondary: #64748b;
-            --text-muted: #94a3b8;
-            --border: #e2e8f0;
-            --success: #10b981;
+            --primary: #8B7355;
+            --primary-dark: #6B5B47;
+            --accent: #D4A574;
+            --bg-primary: #FFFFFF;
+            --bg-secondary: #F5F1EB;
+            --bg-tertiary: #E8E0D4;
+            --bg-dark: #3C3428;
+            --text-primary: #2C2520;
+            --text-secondary: #6B5B47;
+            --text-muted: #9B8B7A;
+            --border: #D4C4B0;
+            --success: #7A8471;
             --radius: 12px;
-            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
-            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
-            --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+            --shadow-sm: 0 1px 2px 0 rgb(60 52 40 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(60 52 40 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(60 52 40 / 0.1);
+            --shadow-xl: 0 20px 25px -5px rgb(60 52 40 / 0.1);
         }
 
         * {
@@ -123,6 +124,8 @@
             flex-direction: column;
             cursor: pointer;
             padding: 0.5rem;
+            background: none;
+            border: none;
         }
 
         .mobile-menu-btn span {
@@ -140,7 +143,7 @@
             top: 70px;
             left: 0;
             width: 100%;
-            background: white;
+            background: var(--bg-primary);
             box-shadow: var(--shadow-lg);
             z-index: 999;
         }
@@ -171,7 +174,7 @@
         /* Hero Section */
         .hero {
             padding: 140px 0 80px;
-            background: linear-gradient(135deg, var(--bg-secondary) 0%, #e0f2fe 100%);
+            background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-tertiary) 100%);
             position: relative;
             overflow: hidden;
         }
@@ -183,7 +186,7 @@
             right: 0;
             width: 50%;
             height: 100%;
-            background: linear-gradient(45deg, transparent 30%, rgba(37, 99, 235, 0.05) 100%);
+            background: linear-gradient(45deg, transparent 30%, rgba(139, 115, 85, 0.05) 100%);
             pointer-events: none;
         }
 
@@ -279,7 +282,7 @@
         .specialty-tags {
             margin-top: 1.5rem;
             padding: 1rem;
-            background: rgba(37, 99, 235, 0.05);
+            background: rgba(139, 115, 85, 0.05);
             border-radius: var(--radius);
             border-left: 4px solid var(--primary);
         }
@@ -584,6 +587,39 @@
             background: #22c55e;
         }
 
+        /* Floating WhatsApp Button */
+        .floating-whatsapp {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background: #25d366;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 1.5rem;
+            box-shadow: var(--shadow-lg);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+
+        .floating-whatsapp:hover {
+            background: #22c55e;
+            transform: scale(1.1);
+            color: white;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+
         /* Footer */
         .footer {
             background: var(--bg-dark);
@@ -719,23 +755,28 @@
                 <li><a href="#contact">Contact</a></li>
             </ul>
 
-            <div class="mobile-menu-btn" id="mobile-menu-btn">
+            <button class="mobile-menu-btn" id="mobile-menu-btn">
                 <span></span>
                 <span></span>
                 <span></span>
-            </div>
+            </button>
         </div>
 
         <div class="mobile-menu" id="mobile-menu">
             <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#programs">Programs</a></li>
-                <li><a href="#testimonials">Testimonials</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#home" class="mobile-link">Home</a></li>
+                <li><a href="#about" class="mobile-link">About</a></li>
+                <li><a href="#programs" class="mobile-link">Programs</a></li>
+                <li><a href="#testimonials" class="mobile-link">Testimonials</a></li>
+                <li><a href="#contact" class="mobile-link">Contact</a></li>
             </ul>
         </div>
     </nav>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/919817187457?text=Hi%20Rajbir%2C%20I%27m%20interested%20in%20your%20nutrition%20coaching%20programs." target="_blank" class="floating-whatsapp" title="Chat with us on WhatsApp">
+        💬
+    </a>
 
     <!-- Hero Section -->
     <section id="home" class="hero">
@@ -746,7 +787,7 @@
                 
                 <div class="hero-actions fade-in-up">
                     <a href="#programs" class="btn btn-primary">Start Your Transformation</a>
-                    <a href="#contact" class="btn btn-secondary">Free 15-min Consult</a>
+                    <a href="https://wa.me/919817187457?text=Hi%20Rajbir%2C%20I%27d%20like%20a%20free%2015-min%20consult." target="_blank" class="btn btn-secondary">Free 15-min Consult</a>
                 </div>
 
                 <div class="specialty-tags fade-in-up">
@@ -828,28 +869,28 @@
                     <h3>Kickstart Program</h3>
                     <p>Jumpstart your journey and feel the first wave of change.</p>
                     <div class="program-price">₹7,000 <span class="program-duration">/ 1 Month</span></div>
-                    <a href="https://wa.me/919817187457?text=Hi%20Rajbir%2C%20I'm%20interested%20in%20the%20Kickstart%20Program." target="_blank" class="btn btn-primary whatsapp-btn">Apply via WhatsApp</a>
+                    <a href="https://wa.me/919817187457?text=Hi%20Rajbir%2C%20I%27m%20interested%20in%20the%20Kickstart%20Program." target="_blank" class="btn btn-primary whatsapp-btn">Apply via WhatsApp</a>
                 </div>
 
                 <div class="program-card">
                     <h3>Momentum Program</h3>
                     <p>Build unstoppable habits and see real, lasting results.</p>
                     <div class="program-price">₹15,000 <span class="program-duration">/ 3 Months</span></div>
-                    <a href="https://wa.me/919817187457?text=Hi%20Rajbir%2C%20I'm%20interested%20in%20the%20Momentum%20Program." target="_blank" class="btn btn-primary whatsapp-btn">Apply via WhatsApp</a>
+                    <a href="https://wa.me/919817187457?text=Hi%20Rajbir%2C%20I%27m%20interested%20in%20the%20Momentum%20Program." target="_blank" class="btn btn-primary whatsapp-btn">Apply via WhatsApp</a>
                 </div>
 
                 <div class="program-card">
                     <h3>Breakthrough Program</h3>
                     <p>Experience a powerful transformation in body and lifestyle.</p>
                     <div class="program-price">₹25,000 <span class="program-duration">/ 6 Months</span></div>
-                    <a href="https://wa.me/919817187457?text=Hi%20Rajbir%2C%20I'm%20interested%20in%20the%20Breakthrough%20Program." target="_blank" class="btn btn-primary whatsapp-btn">Apply via WhatsApp</a>
+                    <a href="https://wa.me/919817187457?text=Hi%20Rajbir%2C%20I%27m%20interested%20in%20the%20Breakthrough%20Program." target="_blank" class="btn btn-primary whatsapp-btn">Apply via WhatsApp</a>
                 </div>
 
                 <div class="program-card">
                     <h3>Elite Lifestyle Program</h3>
                     <p>A year-long partnership to achieve and sustain your dream physique.</p>
                     <div class="program-price">₹40,000 <span class="program-duration">/ 12 Months</span></div>
-                    <a href="https://wa.me/919817187457?text=Hi%20Rajbir%2C%20I'm%20interested%20in%20the%20Elite%20Lifestyle%20Program." target="_blank" class="btn btn-primary whatsapp-btn">Apply via WhatsApp</a>
+                    <a href="https://wa.me/919817187457?text=Hi%20Rajbir%2C%20I%27m%20interested%20in%20the%20Elite%20Lifestyle%20Program." target="_blank" class="btn btn-primary whatsapp-btn">Apply via WhatsApp</a>
                 </div>
             </div>
         </div>
@@ -928,3 +969,80 @@
             <p>&copy; <span id="year"></span> NutritionByRajbir · All rights reserved</p>
         </div>
     </footer>
+
+    <script>
+        // Mobile menu functionality
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navbar = document.getElementById('navbar');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+            });
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!mobileMenuBtn.contains(e.target) && !mobileMenu.contains(e.target)) {
+                mobileMenu.classList.remove('active');
+            }
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Contact form WhatsApp functionality
+        document.getElementById('applyBtn').addEventListener('click', () => {
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const goal = document.getElementById('goal').value;
+
+            if (!name || !phone || !goal) {
+                alert('Please fill in all fields');
+                return;
+            }
+
+            const message = `Hi Rajbir, I'd like to apply for coaching.
+
+Name: ${name}
+Phone: ${phone}
+Goal: ${goal}
+
+Looking forward to discussing the best program for me!`;
+
+            const whatsappUrl = `https://wa.me/919817187457?text=${encodeURIComponent(message)}`;
+            window.open(whatsappUrl, '_blank');
+        });
+
+        // Set current year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Smooth scrolling for all anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
