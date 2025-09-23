@@ -27,7 +27,7 @@
     nav a:hover { color: var(--accent); }
     .container { max-width: 1200px; margin: auto; padding: 20px; }
     /* HERO */
-    .hero { text-align: center; margin-top: 30px; }
+    .hero { text-align: center; margin: 40px auto; max-width: 700px; }
     .hero h1 { font-size: 28px; font-weight: 800; margin-bottom: 10px; }
     .hero p { color: var(--muted); margin-bottom: 16px; font-size: 15px; }
     .btn {
@@ -52,17 +52,17 @@
     .card h2 { font-size: 18px; font-weight: 800; margin-bottom: 10px; text-align: center; }
     .card p { font-size: 14px; color: var(--muted); margin-bottom: 10px; }
     /* ABOUT */
-    .about { display: flex; flex-direction: column; gap: 16px; text-align: center; }
+    .about { text-align: center; }
     .about img {
       width: 100%;
-      max-width: 260px;
+      max-width: 220px;
       border-radius: var(--radius);
       margin: 0 auto 12px auto;
       display: block;
     }
     @media(min-width: 768px) {
-      .about { flex-direction: row; text-align: left; align-items: center; }
-      .about img { margin: 0; }
+      .about { text-align: left; }
+      .about img { float: left; margin: 0 20px 10px 0; }
     }
     ul { font-size: 14px; color: var(--text); padding-left: 18px; text-align: left; }
     /* PROGRAMS */
@@ -124,17 +124,15 @@
     <div class="grid-sections">
       <!-- ABOUT -->
       <div class="card about" id="about">
+        <h2>About Rajbir</h2>
         <img src="rajbir.jpeg" alt="Rajbir">
-        <div>
-          <h2>About Rajbir</h2>
-          <p>With nearly a decade of experience, I help ambitious individuals achieve lasting transformations. My coaching goes beyond reps and meals — it’s about confidence, energy, and a lifestyle that works for you.</p>
-          <ul>
-            <li>Expert guidance in fat loss & muscle building</li>
-            <li>Custom programs for transformation</li>
-            <li>Weekly accountability & adjustments</li>
-            <li>Premium coaching tailored for busy professionals</li>
-          </ul>
-        </div>
+        <p>With nearly a decade of experience, I help ambitious individuals achieve lasting transformations. My coaching goes beyond reps and meals — it’s about confidence, energy, and a lifestyle that works for you.</p>
+        <ul>
+          <li>Expert guidance in fat loss & muscle building</li>
+          <li>Custom programs for transformation</li>
+          <li>Weekly accountability & adjustments</li>
+          <li>Premium coaching tailored for busy professionals</li>
+        </ul>
       </div>
 
       <!-- PROGRAMS -->
