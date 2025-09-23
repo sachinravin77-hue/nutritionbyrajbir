@@ -52,8 +52,19 @@
     .card h2 { font-size: 18px; font-weight: 800; margin-bottom: 10px; text-align: center; }
     .card p { font-size: 14px; color: var(--muted); margin-bottom: 10px; }
     /* ABOUT */
-    .about img { width: 100%; border-radius: var(--radius); margin-bottom: 12px; }
-    ul { font-size: 14px; color: var(--text); padding-left: 18px; }
+    .about { display: flex; flex-direction: column; gap: 16px; text-align: center; }
+    .about img {
+      width: 100%;
+      max-width: 260px;
+      border-radius: var(--radius);
+      margin: 0 auto 12px auto;
+      display: block;
+    }
+    @media(min-width: 768px) {
+      .about { flex-direction: row; text-align: left; align-items: center; }
+      .about img { margin: 0; }
+    }
+    ul { font-size: 14px; color: var(--text); padding-left: 18px; text-align: left; }
     /* PROGRAMS */
     .program-item { margin-bottom: 14px; }
     .program-item h3 { font-size: 15px; margin-bottom: 4px; }
@@ -112,16 +123,18 @@
     <!-- GRID SECTIONS -->
     <div class="grid-sections">
       <!-- ABOUT -->
-      <div class="card" id="about">
-        <h2>About Rajbir</h2>
+      <div class="card about" id="about">
         <img src="rajbir.jpeg" alt="Rajbir">
-        <p>With nearly a decade of experience, I help ambitious individuals achieve lasting transformations. My coaching goes beyond reps and meals — it’s about confidence, energy, and a lifestyle that works for you.</p>
-        <ul>
-          <li>Expert guidance in fat loss & muscle building</li>
-          <li>Custom programs for transformation</li>
-          <li>Weekly accountability & adjustments</li>
-          <li>Premium coaching tailored for busy professionals</li>
-        </ul>
+        <div>
+          <h2>About Rajbir</h2>
+          <p>With nearly a decade of experience, I help ambitious individuals achieve lasting transformations. My coaching goes beyond reps and meals — it’s about confidence, energy, and a lifestyle that works for you.</p>
+          <ul>
+            <li>Expert guidance in fat loss & muscle building</li>
+            <li>Custom programs for transformation</li>
+            <li>Weekly accountability & adjustments</li>
+            <li>Premium coaching tailored for busy professionals</li>
+          </ul>
+        </div>
       </div>
 
       <!-- PROGRAMS -->
