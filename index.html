@@ -1,0 +1,186 @@
+/*
+NutritionByRajbir — Premium Fitness & Nutrition Coaching Website
+
+Updated with premium, lifestyle-oriented copy + testimonials + lead capture form with WhatsApp integration.
+*/
+
+import React, { useState } from "react";
+
+const COLORS = {
+  bg: "#f5f1e7",
+  accent: "#8b5e3c",
+  text: "#3b2f2f",
+  muted: "#7a6c5e",
+  buttonText: "#ffffff",
+};
+
+const WHATSAPP_NUMBER = "+919817187457";
+
+function whatsappLink(message) {
+  const base = "https://wa.me/" + WHATSAPP_NUMBER.replace(/[^0-9]/g, "");
+  return base + "?text=" + encodeURIComponent(message);
+}
+
+export default function NutritionByRajbirSite() {
+  const [form, setForm] = useState({ name: "", phone: "", goal: "" });
+
+  const programs = [
+    { id: "kickstart", title: "Kickstart Program", duration: "1 Month", price: "₹7,000", tagline: "Jumpstart your journey and feel the first wave of change." },
+    { id: "momentum", title: "Momentum Program", duration: "3 Months", price: "₹15,000", tagline: "Build unstoppable habits and see real, lasting results." },
+    { id: "breakthrough", title: "Breakthrough Program", duration: "6 Months", price: "₹25,000", tagline: "Experience a powerful transformation in body and lifestyle." },
+    { id: "elite", title: "Elite Lifestyle Program", duration: "12 Months", price: "₹40,000", tagline: "A year-long partnership to achieve and sustain your dream physique." },
+  ];
+
+  const testimonials = [
+    { name: "Rohit Sharma", quote: "Rajbir helped me lose 10kg in 3 months. I feel lighter, stronger, and more confident.", img: "/client1.jpg" },
+    { name: "Ananya Singh", quote: "The personalized nutrition plan changed my lifestyle. I built lean muscle and improved my energy.", img: "/client2.jpg" },
+    { name: "Arjun Mehta", quote: "I never thought I could stay consistent. With Rajbir’s guidance, I transformed both body and mindset.", img: "/client3.jpg" },
+  ];
+
+  const handleFormSubmit = () => {
+    const message = `Hi Rajbir, I’d like to apply for coaching.\n\nName: ${form.name}\nPhone: ${form.phone}\nGoal: ${form.goal}`;
+    window.open(whatsappLink(message), "_blank");
+  };
+
+  return (
+    <div style={{ background: COLORS.bg, color: COLORS.text, fontFamily: "Inter, Poppins, sans-serif" }}>
+      {/* HEADER */}
+      <header style={{ borderBottom: `1px solid ${COLORS.muted}22` }}>
+        <div style={{ maxWidth: 1100, margin: "0 auto", padding: 20, display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+          <div>
+            <div style={{ fontWeight: 800, fontSize: 20 }}>NutritionByRajbir</div>
+            <div style={{ color: COLORS.muted, fontSize: 13 }}>Premium Fitness & Nutrition Coaching</div>
+          </div>
+          <nav style={{ display: "flex", gap: 12 }}>
+            <a href="#programs" style={{ color: COLORS.muted, fontSize: 13 }}>Programs</a>
+            <a href="#about" style={{ color: COLORS.muted, fontSize: 13 }}>About</a>
+            <a href="#contact" style={{ color: COLORS.muted, fontSize: 13 }}>Contact</a>
+          </nav>
+        </div>
+      </header>
+
+      <main style={{ maxWidth: 1100, margin: "0 auto", padding: 24 }}>
+        {/* HERO */}
+        <section style={{ display: "grid", gridTemplateColumns: "1fr 380px", gap: 20, alignItems: "center", marginTop: 24 }}>
+          <div style={{ padding: 28 }}>
+            <h1 style={{ fontSize: 34, lineHeight: 1.1, fontWeight: 800 }}>Your Body. Your Lifestyle. Your Best Self.</h1>
+            <p style={{ color: COLORS.muted, marginTop: 14, fontSize: 16 }}>Premium coaching that blends science and lifestyle. Lose fat, build lean muscle, and gain unstoppable confidence with programs tailored just for you.</p>
+
+            <div style={{ marginTop: 18, display: "flex", gap: 12 }}>
+              <button onClick={() => document.getElementById('programs')?.scrollIntoView({ behavior: 'smooth' })} style={{ background: COLORS.accent, color: COLORS.buttonText, padding: "12px 18px", borderRadius: 10, fontWeight: 700, cursor: "pointer", border: "none" }}>Start Your Transformation</button>
+              <button onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })} style={{ background: "transparent", border: `1px solid ${COLORS.muted}55`, color: COLORS.text, padding: "12px 18px", borderRadius: 10, cursor: "pointer" }}>Free 15-min Consult</button>
+            </div>
+          </div>
+
+          <div style={{ borderRadius: 16, overflow: 'hidden', boxShadow: '0 10px 30px rgba(0,0,0,0.08)' }}>
+            <img src="/rajbir.jpg" alt="Rajbir" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+          </div>
+        </section>
+
+        {/* ABOUT */}
+        <section id="about" style={{ marginTop: 60, display: 'grid', gridTemplateColumns: '1fr 2fr', gap: 20, alignItems: 'center' }}>
+          <div style={{ borderRadius: 14, overflow: 'hidden', width: 260, height: 260, boxShadow: '0 8px 24px rgba(0,0,0,0.06)' }}>
+            <img alt="Rajbir" src="/rajbir.jpg" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+          </div>
+          <div>
+            <h2 style={{ fontSize: 24, fontWeight: 800 }}>About Rajbir</h2>
+            <p style={{ color: COLORS.muted, marginTop: 10 }}>With nearly a decade of experience in fitness and nutrition, I help ambitious individuals achieve lasting transformations. My coaching goes beyond reps and meals — it’s about building confidence, energy, and a lifestyle that works for you.</p>
+            <ul style={{ marginTop: 14, color: COLORS.text, lineHeight: 1.6 }}>
+              <li>Expert guidance in weight loss and lean muscle building</li>
+              <li>Programs designed for body transformation and lifestyle upgrades</li>
+              <li>Clear tracking, weekly accountability, and real results</li>
+              <li>A premium coaching experience tailored for busy professionals</li>
+            </ul>
+          </div>
+        </section>
+
+        {/* HOW IT WORKS */}
+        <section style={{ marginTop: 60, background: '#fff', padding: 30, borderRadius: 12, boxShadow: '0 8px 24px rgba(0,0,0,0.04)' }}>
+          <h3 style={{ fontSize: 20, fontWeight: 800, textAlign: 'center' }}>How Transformation Happens</h3>
+          <div style={{ display: 'flex', gap: 20, marginTop: 20, justifyContent: 'space-between' }}>
+            <div style={{ flex: 1, padding: 20, borderRadius: 10, background: '#faf7f4' }}>
+              <div style={{ fontWeight: 800 }}>1. Clarity</div>
+              <div style={{ color: COLORS.muted, marginTop: 8 }}>We assess your lifestyle, set goals, and get crystal clear on your path to success.</div>
+            </div>
+            <div style={{ flex: 1, padding: 20, borderRadius: 10, background: '#faf7f4' }}>
+              <div style={{ fontWeight: 800 }}>2. Custom Plan</div>
+              <div style={{ color: COLORS.muted, marginTop: 8 }}>A personalized nutrition and training program built around your body and goals.</div>
+            </div>
+            <div style={{ flex: 1, padding: 20, borderRadius: 10, background: '#faf7f4' }}>
+              <div style={{ fontWeight: 800 }}>3. Transformation</div>
+              <div style={{ color: COLORS.muted, marginTop: 8 }}>Weekly accountability and adjustments until your results become your new lifestyle.</div>
+            </div>
+          </div>
+        </section>
+
+        {/* TESTIMONIALS */}
+        <section style={{ marginTop: 60 }}>
+          <h3 style={{ fontSize: 20, fontWeight: 800, textAlign: 'center' }}>Real People. Real Transformations.</h3>
+          <div style={{ marginTop: 24, display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20 }}>
+            {testimonials.map((t, i) => (
+              <div key={i} style={{ background: '#fff', padding: 20, borderRadius: 12, boxShadow: '0 8px 24px rgba(0,0,0,0.04)', textAlign: 'center' }}>
+                <img src={t.img} alt={t.name} style={{ width: 80, height: 80, borderRadius: '50%', objectFit: 'cover', marginBottom: 10 }} />
+                <p style={{ fontStyle: 'italic', color: COLORS.muted }}>&ldquo;{t.quote}&rdquo;</p>
+                <div style={{ marginTop: 8, fontWeight: 700 }}>{t.name}</div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* PROGRAMS */}
+        <section id="programs" style={{ marginTop: 60 }}>
+          <h3 style={{ fontSize: 20, fontWeight: 800, textAlign: 'center' }}>Programs — Invest in Yourself</h3>
+          <div style={{ marginTop: 24, display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 20 }}>
+            {programs.map((p) => (
+              <div key={p.id} style={{ background: '#fff', padding: 20, borderRadius: 12, boxShadow: '0 8px 24px rgba(0,0,0,0.04)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                <div>
+                  <h4 style={{ fontWeight: 800 }}>{p.title}</h4>
+                  <p style={{ color: COLORS.muted, marginTop: 6 }}>{p.tagline}</p>
+                  <div style={{ marginTop: 12, fontWeight: 700 }}>{p.price} · {p.duration}</div>
+                </div>
+                <button onClick={() => window.open(whatsappLink(`Hi Rajbir, I'm interested in the ${p.title}.`), "_blank")} style={{ marginTop: 16, padding: '10px 14px', borderRadius: 10, background: COLORS.accent, color: COLORS.buttonText, border: 'none', fontWeight: 700, cursor: 'pointer' }}>Apply via WhatsApp</button>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* LEAD FORM */}
+        <section style={{ marginTop: 60, background: '#fff', padding: 30, borderRadius: 12, boxShadow: '0 8px 24px rgba(0,0,0,0.04)' }}>
+          <h3 style={{ fontSize: 20, fontWeight: 800 }}>Apply for Coaching</h3>
+          <p style={{ color: COLORS.muted, marginTop: 10 }}>Spots are limited. Fill in your details and let’s discuss your transformation.</p>
+
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14, marginTop: 16 }}>
+            <input placeholder="Your Name" value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} style={{ padding: 12, border: `1px solid ${COLORS.muted}55`, borderRadius: 8 }} />
+            <input placeholder="Phone Number" value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })} style={{ padding: 12, border: `1px solid ${COLORS.muted}55`, borderRadius: 8 }} />
+          </div>
+          <select value={form.goal} onChange={(e) => setForm({ ...form, goal: e.target.value })} style={{ marginTop: 14, padding: 12, border: `1px solid ${COLORS.muted}55`, borderRadius: 8, width: '100%' }}>
+            <option value="">Select Your Goal</option>
+            <option>Weight Loss</option>
+            <option>Muscle Gain</option>
+            <option>Lifestyle Transformation</option>
+          </select>
+
+          <button onClick={handleFormSubmit} style={{ marginTop: 16, background: COLORS.accent, color: COLORS.buttonText, padding: '14px 20px', borderRadius: 10, border: 'none', fontWeight: 700, cursor: 'pointer' }}>Apply via WhatsApp</button>
+        </section>
+
+        {/* CONTACT */}
+        <section id="contact" style={{ marginTop: 60, background: '#fff', padding: 30, borderRadius: 12, boxShadow: '0 8px 24px rgba(0,0,0,0.04)' }}>
+          <h3 style={{ fontSize: 20, fontWeight: 800 }}>Start Your Journey Today</h3>
+          <p style={{ color: COLORS.muted, marginTop: 10 }}>Message me on WhatsApp for quick access to coaching details and next steps.</p>
+          <button onClick={() => window.open(whatsappLink("Hi Rajbir, I’m ready to transform. Tell me more about your programs."), "_blank")} style={{ marginTop: 16, background: COLORS.accent, color: COLORS.buttonText, padding: '14px 20px', borderRadius: 10, border: 'none', fontWeight: 700, cursor: 'pointer' }}>Message on WhatsApp</button>
+        </section>
+
+        <footer style={{ marginTop: 60, textAlign: 'center', color: COLORS.muted }}>
+          © {new Date().getFullYear()} NutritionByRajbir · All rights reserved
+        </footer>
+      </main>
+
+      <style>{`
+        @media (max-width: 900px) {
+          section { grid-template-columns: 1fr !important; }
+          #programs > div { grid-template-columns: 1fr !important; }
+        }
+      `}</style>
+    </div>
+  );
+}
